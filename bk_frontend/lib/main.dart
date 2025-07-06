@@ -1,3 +1,4 @@
+import 'package:bk_frontend/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const HomeScreen(),//const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
