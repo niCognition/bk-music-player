@@ -2,12 +2,15 @@ import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./db";
 import trackRoutes from "./routes/track.routes";
+import fileUpload from 'express-fileupload';
+
 connectDB();
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(fileUpload())
 app.use(express.json());
 app.use('/tracks', trackRoutes);
 
