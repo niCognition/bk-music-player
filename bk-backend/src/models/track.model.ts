@@ -1,4 +1,5 @@
 import mongoose, { Schema, Document } from "mongoose";
+import { nowInSwedenISO } from "../utils/time";
 
 export interface TrackDocument extends Document {
   title: string;
@@ -8,7 +9,7 @@ export interface TrackDocument extends Document {
   tags?: string[];
   coverUrl?: string;
   audioUrl: string;
-  createdAt: Date;
+  createdAt: string;
 }
 
 const trackSchema = new Schema<TrackDocument>({
@@ -19,7 +20,7 @@ const trackSchema = new Schema<TrackDocument>({
   tags: [String],
   coverUrl: String,
   audioUrl: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now },
+  createdAt: { type: String, default: nowInSwedenISO },
 });
 
 export const Track = mongoose.model<TrackDocument>("Track", trackSchema);
