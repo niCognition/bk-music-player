@@ -4,28 +4,35 @@ import { requireApiKey } from "../middleware/auth.middleware";
 import { UploadedFile } from "express-fileupload";
 import { uploadToNextcloud } from "../services/nextcloud.service";
 import { nowInSwedenISO } from "../utils/time";
-import { ObjectId } from "mongoose";
-import { DateTime } from "luxon";
 
 const router = express.Router();
 
-router.get("/:id", requireApiKey, async (req, res) => {
+router.get("/", requireApiKey, async (req, res) => {
   try {
-    const track = await Track.findById(req.params.id);
-
-    if (!track) {
-      res.status(404).json({ error: "Track not found" });
-      return;
-    }
-
-    const trackObject = track.toObject();
-
-    res.json(trackObject);
+    const tracks = await Track.find().sort({ createdAt: -1 });
+    res.json(tracks);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Failed to fetch track" });
+    res.status(500).json({ error: "Failed to fetch tracks" });
   }
 });
+
+// router.get("/:id", requireApiKey, async (req, res) => {
+//   try {
+//     const track = await Track.findById(req.params.id);
+
+//     if (!track) {
+//       res.status(404).json({ error: "Track not found" });
+//       return;
+//     }
+
+//     const trackObject = track.toObject();
+
+//     res.json(trackObject);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ error: "Failed to fetch track" });
+//   }
+// });
 
 router.get("/search", requireApiKey, async (req, res) => {
   try {
