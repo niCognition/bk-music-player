@@ -1,0 +1,28 @@
+# === NODE (backend) ===
+backend/node_modules/
+backend/dist/
+backend/.env
+backend/*.log
+
+# === FLUTTER (frontend) ===
+frontend/.dart_tool/
+frontend/.idea/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.packages
+frontend/build/
+frontend/pubspec.lock
+
+# === MAC / WINDOWS / SYSTEM ===
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.DS_Store
+
+# === GIT ===
+*.orig
+
+# === VSCODE (om du använder det) ===
+.vscode/
