@@ -4,7 +4,6 @@ import tseslint from "typescript-eslint";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  { plugins: ["prettier"], extends: ["plugin:prettier/recommended"] },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
     plugins: { js },
@@ -15,4 +14,5 @@ export default defineConfig([
     languageOptions: { globals: globals.node },
   },
   tseslint.configs.recommended,
+  { plugins: ["prettier"], extends: ["plugin:prettier/recommended"] },
 ]);
