@@ -4,8 +4,8 @@ A lightweight, private AI-generated music streaming app.
 
 ## Structure
 
-- `backend/` – Node.js/Express API with MongoDB
-- `frontend/` – Flutter Web UI
+- `bk-backend/` – Node.js/Express API with MongoDB
+- `bk-frontend/` – Flutter Web UI
 
 ## Getting started
 
