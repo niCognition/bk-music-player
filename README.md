@@ -1,6 +1,6 @@
 # BK music player
 
-A lightweight, private AI-generated music streaming app.
+A lightweight, private music streaming web app.
 
 ## Structure
 
