@@ -1,17 +1,18 @@
 # === NODE (backend) ===
-backend/node_modules/
-backend/dist/
-backend/.env
-backend/*.log
+bk-backend/node_modules/
+bk-backend/dist/
+bk-backend/.env
+bk-backend/*.log
 
 # === FLUTTER (frontend) ===
-frontend/.dart_tool/
-frontend/.idea/
-frontend/.flutter-plugins
-frontend/.flutter-plugins-dependencies
-frontend/.packages
-frontend/build/
-frontend/pubspec.lock
+bk-frontend/.dart_tool/
+bk-frontend/.idea/
+bk-frontend/.flutter-plugins
+bk-frontend/.flutter-plugins-dependencies
+bk-frontend/.packages
+bk-frontend/build/
+bk-frontend/pubspec.lock
+bk-frontend/.env
 
 # === MAC / WINDOWS / SYSTEM ===
 Thumbs.db
