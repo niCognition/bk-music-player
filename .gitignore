@@ -5,14 +5,14 @@ bk-backend/.env
 bk-backend/*.log
 
 # === FLUTTER (frontend) ===
-bk-frontend/.dart_tool/
-bk-frontend/.idea/
-bk-frontend/.flutter-plugins
-bk-frontend/.flutter-plugins-dependencies
-bk-frontend/.packages
-bk-frontend/build/
-bk-frontend/pubspec.lock
-bk-frontend/.env
+bk_frontend/.dart_tool/
+bk_frontend/.idea/
+bk_frontend/.flutter-plugins
+bk_frontend/.flutter-plugins-dependencies
+bk_frontend/.packages
+bk_frontend/build/
+bk_frontend/pubspec.lock
+bk_frontend/.env
 
 # === MAC / WINDOWS / SYSTEM ===
 Thumbs.db
