@@ -2,7 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./db";
 import trackRoutes from "./routes/track.routes";
-import fileUpload from 'express-fileupload';
+import fileUpload from "express-fileupload";
+import cors from "cors";
 
 connectDB();
 dotenv.config();
@@ -10,9 +11,16 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(fileUpload())
+app.use(
+  cors({
+    origin: "http://localhost:8080",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type", "x-api-key"],
+  })
+);
+app.use(fileUpload());
 app.use(express.json());
-app.use('/tracks', trackRoutes);
+app.use("/tracks", trackRoutes);
 
 app.get("/", (req, res) => {
   res.send("Börjes Kebab Backend is running..");
