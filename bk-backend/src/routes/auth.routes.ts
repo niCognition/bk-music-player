@@ -25,9 +25,6 @@ router.post("/login", async (req, res) => {
     return;
   }
 
-  console.log('JWT_SECRET: ', process.env.JWT_SECRET);
-  console.log('JWT_REFRESH_SECRET: ', process.env.JWT_REFRESH_SECRET);
-
   const accessToken = jwt.sign(
     { username: user.username },
     process.env.JWT_SECRET!,
