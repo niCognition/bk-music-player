@@ -9,7 +9,7 @@ import { nowInSwedenISO } from "../utils/time";
 
 const router = express.Router();
 
-router.post("/", /*requireAuth,*/ async (req: AuthenticatedRequest, res) => {
+router.post("/", requireAuth, async (req: AuthenticatedRequest, res) => {
   try {
     const {
       username,
