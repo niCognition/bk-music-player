@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./db";
 import trackRoutes from "./routes/track.routes";
+import userRoutes from "./routes/user.routes";
 import fileUpload from "express-fileupload";
 import cors from "cors";
 
@@ -21,6 +22,7 @@ app.use(
 app.use(fileUpload());
 app.use(express.json());
 app.use("/tracks", trackRoutes);
+app.use("/users", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Börjes Kebab Backend is running..");
